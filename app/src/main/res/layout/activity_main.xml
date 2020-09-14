@@ -27,8 +27,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="34dp"
         android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="Name" />
+        android:inputType="numberDecimal" />
 
     <TextView
         android:id="@+id/tvEuros"
@@ -48,8 +47,7 @@
         android:layout_alignLeft="@id/tvEuros"
         android:layout_marginTop="52dp"
         android:ems="10"
-        android:inputType="numberDecimal"
-        android:text="Name" />
+        android:inputType="numberDecimal" />
 
     <RadioGroup
         android:id="@+id/rgCambio"
@@ -98,9 +96,10 @@
         android:id="@+id/btnConvertir"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@id/tvCambio"
         android:layout_below="@+id/tvCambio"
+        android:layout_alignLeft="@id/tvCambio"
         android:layout_marginTop="50dp"
+        android:onClick="Convertir"
         android:text="Convertir" />
 
 
