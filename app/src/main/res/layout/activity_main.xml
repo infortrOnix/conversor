@@ -27,6 +27,9 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="34dp"
         android:ems="10"
+        android:enabled="false"
+        android:fadeScrollbars="false"
+        android:hint="Monto en Dólares"
         android:inputType="numberDecimal" />
 
     <TextView
@@ -47,6 +50,7 @@
         android:layout_alignLeft="@id/tvEuros"
         android:layout_marginTop="52dp"
         android:ems="10"
+        android:hint="Monto en Euros"
         android:inputType="numberDecimal" />
 
     <RadioGroup
@@ -63,14 +67,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Euros a Dolares" />
+            android:text="Dolares a Euros"
+            android:onClick="CargarMoneda"
+            />
 
         <RadioButton
             android:id="@+id/rbEuro"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="30dp"
-            android:text="Dolares a Euros" />
+            android:text="Euros a Dolares"
+            android:onClick="CargarMoneda"
+            />
     </RadioGroup>
 
     <TextView

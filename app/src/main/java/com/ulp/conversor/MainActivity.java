@@ -28,6 +28,9 @@ public class MainActivity extends AppCompatActivity {
         rbDolares = (RadioButton)findViewById(R.id.rbDolar);
         rbEuros = (RadioButton)findViewById(R.id.rbEuro);
 
+        etDolares.setEnabled(false);
+        etEuros.setEnabled(false);
+
 
     }
 
@@ -40,20 +43,44 @@ public class MainActivity extends AppCompatActivity {
 
         if(rbDolares.isChecked()) {
 
-            double numero1 = Double.parseDouble(dolares); // parseamos los string a int para la suma
+            double numero1 = Double.parseDouble(dolares); // parseamos los string a int para la conversion
 
-            double convertir = numero1 * 1.2;
+            double convertir = numero1 * 0.84;
 
-            String cambio = String.valueOf(convertir);//parseamos de int a String la suma
+            String cambio = String.valueOf(convertir);//parseamos de int a String la conversion
+            Toast.makeText(this, "Valor u$s 0.84 por Euro.. !", Toast.LENGTH_SHORT).show();
 
             etCambio.setText(cambio);
 
+        }else if(rbEuros.isChecked()){
+            double numero1 = Double.parseDouble(euros); // parseamos los string a int para la conversion
+
+            double convertir = numero1 * 1.18;
+
+            String cambio = String.valueOf(convertir);//parseamos de int a String la conversion
+            Toast.makeText(this, "Valor € 1.18 por Dólar.. !", Toast.LENGTH_SHORT).show();
+
+            etCambio.setText(cambio);
         }else{
-            Toast.makeText(this, "Debes Ingresar un Valor .. !", Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, "Debes Ingresar moneda y el Valor a convertir.. !", Toast.LENGTH_SHORT).show();
         }
     }
 
     //
+
+    public void CargarMoneda(View v){
+        if(rbDolares.isChecked()){
+            etDolares.setEnabled(true);
+            etDolares.setSelected(true);
+            etEuros.setEnabled(false);
+            etEuros.setText("");
+        }else{
+            etEuros.setEnabled(true);
+            etDolares.setEnabled(false);
+            etDolares.setText("");
+        }
+
+    }
 
 
 }
